@@ -6,7 +6,9 @@ import Tabs from "./components/Tabs";
 import Journey from "./components/Journey";
 import Properties from "./components/Properties";
 import History from "./components/History";
+import Visits from "./components/Visits";
 import LikedProperties from "./components/LikedProperties";
+import Contact from "./components/Contact";
 
 export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState("Dashboard");
@@ -30,6 +32,12 @@ export default function DashboardPage() {
 
             {/* My Properties */}
             {activeTab === "My Properties" && <Properties />}
+
+            {/* My Visits */}
+            {activeTab === "My Visits" && <Visits />}
+
+            {/* Contact Detail */}
+            {activeTab === "Contact Detail" && <Contact />}
           </div>
         </div>
 

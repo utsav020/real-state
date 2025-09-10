@@ -12,12 +12,12 @@ const items = [
 
 export default function Sidebar({ active, setActive }: SidebarProps) {
   return (
-    <div className="bg-[#3a3531] text-white rounded-lg p-4 space-y-2 h-fit">
+    <div className="bg-[#3a3531] ml-[10px] text-white rounded-lg p-4 space-y-2 h-fit">
       {items.map((item, index) => (
         <div key={item.id}>
           <button
             onClick={() => setActive(item.title)}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-md font-medium transition ${
+            className={`flex items-center justify-center gap-3 w-full py-3 rounded-md font-medium transition ${
               active === item.title
                 ? "bg-white text-black shadow"
                 : "hover:bg-[#4a4541]"

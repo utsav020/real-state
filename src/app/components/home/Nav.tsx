@@ -1,21 +1,28 @@
-import { Import } from "lucide-react";
-import React from "react";
-import Link from "next/link";
+"use client";
 
-export default function Nav() {
+import { useState } from "react";
+import Header from "../../Menu/components/Header";
+import MenuOverlay from "../../Menu/components/MenuOverlay";
+
+export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="fixed max-w-[1920px] top-0 left-0 right-0 z-50 w-full bg-white px-4 sm:px-6 md:px-8 shadow">
-      <div className="max-w-[1520px] pt-[18px] mx-auto flex justify-between items-center">
-        <div className="">
-          <p className="text-[30px] text-[#000000]">Real estate</p>
-        </div>
-        <div className="flex w-[80px] flex-wrap justify-between items-center">
-          <Link href={"/Dashboard"}>
-            <img src="/images/Profile.png" />
-          </Link>
-          <img src="/images/Menu.png" />
-        </div>
-      </div>
+    <div className='relative'>
+      {/* ✅ Header with hamburger button */}
+      <Header onMenuClick={() => setMenuOpen(true)} />
+
+      {/* ✅ Full-page sliding menu overlay */}
+      <MenuOverlay isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+
+      {/* ✅ Main content */}
+      {/* <main className="p-6">
+        <h2 className="text-2xl font-bold">Welcome to Real Estate</h2>
+        <p className="mt-4 text-gray-600">
+          This is your homepage content. Click the menu icon to open the
+          full-screen overlay menu.
+        </p>
+      </main> */}
     </div>
   );
 }

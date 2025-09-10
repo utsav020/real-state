@@ -9,7 +9,7 @@ const journey = [
 
 export default function Journey() {
   return (
-    <div className="mt-6 max-w-[980px]">
+    <div className="mt-6 max-w-[980px] mx-auto">
       <h3 className="font-semibold mb-4">My journey</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-[900px] mx-auto">
         {journey.map((item) => (

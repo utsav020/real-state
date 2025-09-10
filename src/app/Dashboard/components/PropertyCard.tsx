@@ -27,7 +27,7 @@ export default function PropertyCard({ title, price, desc, image }: PropertyCard
       </div>
 
       {/* Property Info */}
-      <div className="flex-1 h-[176px] border-2">
+      <div className="flex-1 h-[176px]">
         <div className="flex items-start justify-between">
           <h3 className="font-semibold text-lg">{title}</h3>
           <span className="font-semibold">{price}</span>

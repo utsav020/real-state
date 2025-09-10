@@ -8,6 +8,18 @@ const liked = [
     desc: "Lorem ipsum dolor sit amet consectetur. In nibh fames sollicitudin in placerat. Ut aliquet.",
     image: "/images/Like-1.png",
   },
+  {
+    id: 2,
+    title: "Lorem ipsum dolor sit",
+    desc: "Lorem ipsum dolor sit amet consectetur. In nibh fames sollicitudin in placerat. Ut aliquet.",
+    image: "/images/Like-1.png",
+  },
+  {
+    id: 3,
+    title: "Lorem ipsum dolor sit",
+    desc: "Lorem ipsum dolor sit amet consectetur. In nibh fames sollicitudin in placerat. Ut aliquet.",
+    image: "/images/Like-1.png",
+  },
 ];
 
 export default function LikedProperties() {

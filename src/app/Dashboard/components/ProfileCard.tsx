@@ -2,18 +2,18 @@ import Image from "next/image";
 
 export default function ProfileCard() {
   return (
-    <div className="bg-[#3a3531] max-w-[980px] mx-auto text-white rounded-lg p-6">
+    <div className="bg-[#3a3531] w-[980px] mx-auto text-white rounded-lg p-6">
       <div className="flex items-center gap-4">
         <Image
-          src="/images/profile.jpg"
+          src="/images/Profile-1.png"
           alt="Profile"
           width={80}
           height={80}
-          className="rounded-full"
+          className="rounded-full ml-[10px]"
         />
         <div>
-          <h2 className="text-2xl font-bold">Jane Cooper</h2>
-          <p className="text-sm">JaneCooper@gmail.com</p>
+          <h2 className="text-[40px] font-bold">Jane Cooper</h2>
+          <p className="text-[24px]">JaneCooper@gmail.com</p>
         </div>
       </div>
 
