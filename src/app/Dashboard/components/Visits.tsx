@@ -50,29 +50,27 @@ export default function Visits() {
   const [activeTab, setActiveTab] = useState("Upcoming");
 
   return (
-    <div className="flex flex-col mt-[20px]">
-      <div className="flex flex-1 gap-6 p-6">
+    <div className="flex max-w-[960px] mx-auto flex-col mt-6 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-col xl:flex-row gap-6">
         {/* Sidebar */}
-        <aside className="w-[300px] h-[192px] bg-[#3a3531] rounded-xl p-4 text-white space-y-6">
+        <aside className="flex-col flex lg:flex-col gap-2 h-[123px] w-[200px] overflow-x-auto lg:overflow-visible scrollbar-hide bg-[#3a3531] rounded-xl p-2 lg:p-4 text-white">
           <button
-            className={`flex items-center w-[260px] justify-center gap-2 px-4 py-3 rounded-lg ${
+            className={`flex items-center justify-center lg:justify-start gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition ${
               activeTab === "Upcoming"
-                ? "bg-white w-[260px] text-black font-medium"
-                : "text-white"
+                ? "bg-white text-black font-medium"
+                : "hover:bg-[#4a4541]"
             }`}
             onClick={() => setActiveTab("Upcoming")}
           >
             <CalendarDays className="w-5 h-5" />
-            Upcoming (3)
+            Upcoming ({visits.length})
           </button>
-
-          <div className="border border-[#FFFFFF]"></div>
-
+          <div className="border-1 mt-1"></div>
           <button
-            className={`flex items-center w-[260px] justify-center gap-2 px-4 py-3 rounded-lg ${
+            className={`flex items-center justify-center lg:justify-start gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition ${
               activeTab === "Completed"
-                ? "bg-white w-[260px] text-black font-medium"
-                : "text-white"
+                ? "bg-white text-black font-medium"
+                : "hover:bg-[#4a4541]"
             }`}
             onClick={() => setActiveTab("Completed")}
           >
@@ -82,66 +80,59 @@ export default function Visits() {
         </aside>
 
         {/* Main content */}
-        <main className="flex-1 bg-white w-[560px] h-[708px] rounded-xl p-6 space-y-4">
+        <main className="flex-1 flex flex-col gap-4">
           {visits.map((visit) => (
-            <div key={visit.id}>
-              <div
-                
-                className="flex gap-4 bg-[#F4F4F4] border border-gray-200 rounded-lg p-4"
-              >
-                {/* Property Image */}
-                <div className="relative w-[160px] h-[176px] rounded-lg overflow-hidden">
-                  <Image
-                    src={visit.image}
-                    alt={visit.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <button className="absolute top-2 right-2 bg-white p-1 rounded-full shadow">
-                    <Heart className="w-4 h-4 text-red-500" />
+            <div
+              key={visit.id}
+              className="flex flex-col sm:flex-row gap-4 bg-[#F4F4F4] rounded-xl p-4 shadow-md"
+            >
+              {/* Property Image */}
+              <div className="relative w-full sm:w-[160px] h-[176px] rounded-lg overflow-hidden flex-shrink-0">
+                <Image
+                  src={visit.image}
+                  alt={visit.title}
+                  fill
+                  className="object-cover"
+                />
+                <button className="absolute top-2 right-2 bg-white p-1 rounded-full shadow">
+                  <Heart className="w-4 h-4 text-red-500" />
+                </button>
+              </div>
+
+              {/* Property Info */}
+              <div className="flex-1 flex flex-col justify-between">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+                  <div>
+                    <h3 className="font-semibold text-lg text-gray-800">
+                      {visit.title}
+                    </h3>
+                    <p className="text-sm mt-1 text-gray-500">Virtual visit</p>
+                  </div>
+                  <p className="font-semibold text-lg text-gray-800">
+                    {visit.price}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 mt-3">
+                  <span className="text-3xl font-bold text-gray-900">
+                    {visit.date.split(" ")[0]}
+                  </span>
+                  <div className="text-sm text-gray-600 leading-tight">
+                    <p>{visit.date.split(" ")[1]}</p>
+                    <p>{visit.time}</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                  <button className="flex-1 flex justify-center items-center gap-2 bg-[#3E362E] text-white px-4 py-2 rounded-md text-sm hover:bg-[#2C2C2C] transition">
+                    <ArrowUpRight className="w-4 h-4" />
+                    Reschedule
+                  </button>
+                  <button className="flex-1 flex justify-center items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-md text-sm hover:bg-green-600 transition">
+                    <Phone className="w-4 h-4" />
+                    Call
                   </button>
                 </div>
-
-                {/* Property Info */}
-                <div className="">
-                  <div className="flex justify-between w-[300px]">
-                    <div className="">
-                      <h3 className="font-semibold text-[18px] text-gray-800">
-                        {visit.title}
-                      </h3>
-                      <p className="text-sm mt-[10px] text-gray-500">Virtual visit</p>
-                    </div>
-                    <div className="">
-                      <p className="font-semibold text-[18px] text-gray-800">
-                        {visit.price}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-2 flex items-center gap-2">
-                    <span className="text-[32px] font-bold text-gray-900">
-                      {visit.date.split(" ")[0]}
-                    </span>
-                    <div className="text-sm text-gray-600 leading-tight">
-                      <p>{visit.date.split(" ")[1]}</p>
-                      <p>{visit.time}</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col mt-[15px]">
-                    <div className="flex justify-between">
-                      <button className="flex w-[135px] h-[41px] justify-center items-center gap-3 bg-[#3E362E] text-white px-3 py-1 rounded-md text-sm">
-                        <ArrowUpRight className="w-4 h-4" />
-                        Reschedule
-                      </button>
-                      <button className="flex w-[135px] h-[41px] justify-center items-center gap-4 bg-[#35B850] text-white px-3 py-1 rounded-md text-sm">
-                        <Phone className="w-4 h-4" />
-                        Call
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Price + Actions */}
               </div>
             </div>
           ))}

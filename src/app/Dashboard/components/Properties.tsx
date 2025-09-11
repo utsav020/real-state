@@ -29,9 +29,9 @@ const properties = [
 
 export default function Properties() {
   return (
-    <div className="flex w-[900px] justify-between mt-[40px]">
+    <div className="flex flex-col lg:flex-col w-full max-w-[1200px] mx-auto gap-6 mt-10 px-4">
       {/* Sidebar */}
-      <aside className="w-[280px] h-[344px] text-center  shrink-0">
+      <aside className="w-full flex justify-center h-[250px] lg:w-[280px] lg:shrink-0">
         <Sidebar
           active={""}
           setActive={function (tab: string): void {
@@ -41,8 +41,8 @@ export default function Properties() {
       </aside>
 
       {/* Property Cards */}
-      <main className="w-[570px] bg-white shadow-md rounded-xl h-[735px]">
-        <div className="grid grid-cols-1 mt-[20px] sm:grid-cols-2 lg:grid-cols-1 gap-6">
+      <main className="flex-1 bg-white shadow-md rounded-xl p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6">
           {properties.map((p) => (
             <PropertyCard key={p.id} {...p} />
           ))}

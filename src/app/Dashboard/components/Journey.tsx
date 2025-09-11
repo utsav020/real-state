@@ -9,27 +9,36 @@ const journey = [
 
 export default function Journey() {
   return (
-    <div className="mt-6 max-w-[980px] mx-auto">
-      <h3 className="font-semibold mb-4">My journey</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-[900px] mx-auto">
+    <div className="mt-6 w-full px-4">
+      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 text-gray-800 text-center md:text-left">
+        My Journey
+      </h3>
+
+      {/* ✅ Responsive grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 max-w-[980px] mx-auto">
         {journey.map((item) => (
           <div
             key={item.id}
-            className="bg-white w-[200px] h-[215px] rounded-lg shadow-sm p-4 flex flex-col"
+            className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-between hover:shadow-lg transition-shadow"
           >
+            {/* ✅ Image */}
             <Image
               src={item.image}
               alt={item.title}
               width={160}
               height={100}
-              className="object-contain mb-2"
+              className="object-contain mb-3"
             />
-            <div className="flex text-[18px] mt-[20px] gap-2 font-semibold">
-              {item.icon} {item.title}
+
+            {/* ✅ Title + Icon */}
+            <div className="flex items-center gap-2 text-base sm:text-lg md:text-xl font-semibold text-gray-700">
+              <span>{item.icon}</span> {item.title}
             </div>
-            <p className="text-base flex items-center justify-between text-gray-500 mt-1">
+
+            {/* ✅ Properties Count */}
+            <p className="text-sm sm:text-base text-gray-500 mt-2 flex items-center gap-2">
               {item.count} Properties
-              <span className="mt-2 text-gray-400">➔</span>
+              <span className="text-gray-400">➔</span>
             </p>
           </div>
         ))}

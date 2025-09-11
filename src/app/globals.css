@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+
+@layer utilities {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-slide {
+    animation: slide 15s linear infinite;
+    width: max-content;
+  }
+}
+
+
+/* ✅ Hide scrollbar cross-browser */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+        @keyframes slideUp {
+          0% {
+            transform: translateY(0);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(100%);
+            opacity: 1;
+          }
+        }
+        .animate-slideUp {
+          animation: slideUp 0.7s ease-out forwards;
+        }
+      

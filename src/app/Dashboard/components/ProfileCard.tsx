@@ -2,29 +2,35 @@ import Image from "next/image";
 
 export default function ProfileCard() {
   return (
-    <div className="bg-[#3a3531] w-[980px] mx-auto text-white rounded-lg p-6">
-      <div className="flex items-center gap-4">
+    <div className="bg-[#3a3531] w-full max-w-[980px] mx-auto text-white rounded-lg p-4 sm:p-6 lg:p-8">
+      {/* ✅ Profile Info */}
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
         <Image
           src="/images/Profile-1.png"
           alt="Profile"
           width={80}
           height={80}
-          className="rounded-full ml-[10px]"
+          className="rounded-full mx-auto sm:mx-0"
         />
-        <div>
-          <h2 className="text-[40px] font-bold">Jane Cooper</h2>
-          <p className="text-[24px]">JaneCooper@gmail.com</p>
+        <div className="text-center sm:text-left">
+          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-bold">
+            Jane Cooper
+          </h2>
+          <p className="text-base sm:text-lg lg:text-[24px] break-words">
+            JaneCooper@gmail.com
+          </p>
         </div>
       </div>
 
-      <div className="mt-6 text-[20px] max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/30 pt-4 text-sm">
+      {/* ✅ Details Grid */}
+      <div className="mt-6 text-sm sm:text-base lg:text-[20px] grid grid-cols-2 xs:grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/30 pt-4">
         <div>
           <p className="font-semibold">Location:</p>
           <p className="text-[#D0D0D0]">Ahmadabad</p>
         </div>
         <div>
           <p className="font-semibold">Number:</p>
-          <p className="text-[#D0D0D0] mt-[10px]">1234567890</p>
+          <p className="text-[#D0D0D0]">1234567890</p>
         </div>
         <div>
           <p className="font-semibold">Status:</p>

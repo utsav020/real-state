@@ -9,17 +9,21 @@ interface PropertyCardProps {
   image: string;
 }
 
-export default function PropertyCard({ title, price, desc, image }: PropertyCardProps) {
+export default function PropertyCard({
+  title,
+  price,
+  desc,
+  image,
+}: PropertyCardProps) {
   return (
-    <div className="bg-[#F4F4F4] mx-auto w-[520px] h-[216px] rounded-lg shadow-sm p-4 flex gap-4 items-start">
+    <div className="bg-[#F4F4F4] w-full rounded-lg shadow-sm p-4 flex flex-col sm:flex-row gap-4 items-start">
       {/* Property Image */}
-      <div className="relative">
+      <div className="relative w-full sm:w-[160px] h-[200px] sm:h-[176px] flex-shrink-0">
         <Image
           src={"/images/Like-1.png"}
           alt={title}
-          width={160}
-          height={176}
-          className="rounded-lg w-[160px] h-[176px] object-cover"
+          fill
+          className="rounded-lg object-cover"
         />
         <button className="absolute top-2 right-2 bg-white p-1 rounded-full shadow">
           <Heart className="w-4 h-4 text-red-500 fill-red-500" />
@@ -27,19 +31,24 @@ export default function PropertyCard({ title, price, desc, image }: PropertyCard
       </div>
 
       {/* Property Info */}
-      <div className="flex-1 h-[176px]">
-        <div className="flex items-start justify-between">
-          <h3 className="font-semibold text-lg">{title}</h3>
-          <span className="font-semibold">{price}</span>
+      <div className="flex-1 flex flex-col h-full justify-between">
+        {/* Title + Price */}
+        <div>
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-semibold text-base sm:text-lg">{title}</h3>
+            <span className="font-semibold text-sm sm:text-base">{price}</span>
+          </div>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1 line-clamp-3">
+            {desc}
+          </p>
         </div>
-        <p className="text-sm text-gray-500 mt-1">{"Lorem ipsum dolor sit amet consectetur. In nibh fames sollicitudin in placerat. Ut aliquet. In nibh fames sollicitudin in placerat. Ut aliquet."}</p>
 
         {/* Buttons */}
-        <div className="flex gap-3 mt-10">
-          <button className="bg-[#3E362E] w-[135.15px] text-white px-4 py-2 rounded-[5px] text-sm">
+        <div className="flex flex-col sm:flex-row gap-3 mt-4">
+          <button className="flex-1 bg-[#3E362E] text-white px-4 py-2 rounded-md text-sm hover:bg-black transition">
             BOOK A VISIT
           </button>
-          <button className="bg-green-500 w-[135.15px] text-white px-4 py-2 rounded-md text-sm hover:bg-green-600">
+          <button className="flex-1 bg-green-500 text-white px-4 py-2 rounded-md text-sm hover:bg-green-600 transition">
             CALL
           </button>
         </div>

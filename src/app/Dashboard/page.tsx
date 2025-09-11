@@ -16,37 +16,38 @@ export default function DashboardPage() {
   const tabs = ["Dashboard", "My Properties", "My Visits", "Contact Detail"];
 
   return (
-    <div className="min-h-screen mt-[100px] bg-white shadow-md p-6">
-      <div className="grid grid-cols-1 lg:grid-cols-3 mx-auto max-w-[1520px] gap-6">
-        {/* LEFT SIDE */}
-        <div className="lg:col-span-2 space-y-6">
-          {/* Profile */}
-          <ProfileCard />
+    <main className="pt-[100px] bg-white">
+      <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid max-w-[1520px] mx-auto grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-3 gap-6">
+          {/* ✅ LEFT SIDE (Profile + Tabs Content) */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Profile */}
+            <ProfileCard />
 
-          {/* Tabs */}
-          <div className="bg-[#f7f5f0] max-w-[980px] mx-auto rounded-lg p-6">
-            <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+            {/* Tabs & Content */}
+            <div className="bg-[#f7f5f0] max-w-[960px] mx-auto rounded-lg p-4 sm:p-6">
+              <Tabs
+                tabs={tabs}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
 
-            {/* My Journey */}
-            {activeTab === "Dashboard" && <Journey />}
-
-            {/* My Properties */}
-            {activeTab === "My Properties" && <Properties />}
-
-            {/* My Visits */}
-            {activeTab === "My Visits" && <Visits />}
-
-            {/* Contact Detail */}
-            {activeTab === "Contact Detail" && <Contact />}
+              <div className="mt-6 max-w-[960px] mx-auto">
+                {activeTab === "Dashboard" && <Journey />}
+                {activeTab === "My Properties" && <Properties />}
+                {activeTab === "My Visits" && <Visits />}
+                {activeTab === "Contact Detail" && <Contact />}
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* RIGHT SIDE */}
-        <div className="space-y-6">
-          <History />
-          <LikedProperties />
+          {/* ✅ RIGHT SIDE (Sidebar widgets) */}
+          <aside className="space-y-6">
+            <History />
+            <LikedProperties />
+          </aside>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

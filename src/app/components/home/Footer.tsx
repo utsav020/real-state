@@ -98,7 +98,7 @@ export default function Footer(): JSX.Element {
             </div>
 
             {/* Contact Info */}
-            <div className="text-center w-[240px] mx-auto sm:text-left">
+            <div className="text-center sm:w-[240px] mx-auto sm:text-left">
               <h3 className="sr-only">Contact</h3>
               {infoBlocks.map((info, idx) => (
                 <div
@@ -116,13 +116,13 @@ export default function Footer(): JSX.Element {
             {/* Newsletter */}
             <div className="text-center sm:text-left">
               <p className="font-bold text-2xl text-[#FFFFFF]">Newsletter</p>
-              <div className="mt-4 flex flex-col sm:flex-row items-center sm:items-stretch gap-3">
+              <div className="mt-4 flex flex-col sm:flex-row items-center sm:items-stretch">
                 <input
                   className="w-full sm:w-[180px] h-[44px] pl-4 text-sm text-[#454545] bg-white rounded-[8px] sm:rounded-l-[8px] sm:rounded-r-none focus:outline-none"
                   type="email"
                   placeholder="Your email"
                 />
-                <button className="w-full sm:w-[104px] h-[44px] bg-[#BA945A] text-[#FFFFFF] text-sm rounded-[8px] sm:rounded-l-none sm:rounded-r-[8px] hover:bg-[#a87f4a] transition">
+                <button className="w-full mt-[10px] md:mt-[0] sm:w-[104px] h-[44px] bg-[#BA945A] text-[#FFFFFF] text-sm rounded-[8px] sm:rounded-l-none sm:rounded-r-[8px] hover:bg-[#a87f4a] transition">
                   Subscribe
                 </button>
               </div>
