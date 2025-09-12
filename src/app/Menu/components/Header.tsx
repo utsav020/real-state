@@ -10,7 +10,7 @@ interface HeaderProps {
 export default function Header({ onMenuClick }: HeaderProps) {
   return (
     <header className="fixed h-[70px] top-0 left-0 right-0 z-50 w-full bg-transparent shadow-md backdrop-blur-md">
-      <div className="max-w-[1520px] w-full h-full mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1520px] w-full h-full mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-">
         {/* ✅ Logo */}
         <Link href={"/"}>
           <h1 className="text-lg sm:text-xl lg:text-3xl font-bold text-[#3E362E]">
@@ -34,7 +34,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
           {/* Hamburger Menu */}
           <button
             onClick={onMenuClick}
-            className="text-2xl sm:text-3xl lg:text-4xl focus:outline-none text-[#3E362E]"
+            className="text-2xl cursor-pointer sm:text-3xl lg:text-4xl focus:outline-none text-[#3E362E]"
             aria-label="Menu"
           >
             &#9776;

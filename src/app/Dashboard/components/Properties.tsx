@@ -29,7 +29,7 @@ const properties = [
 
 export default function Properties() {
   return (
-    <div className="flex flex-col lg:flex-col w-full max-w-[1200px] mx-auto gap-6 mt-10 px-4">
+    <div className="flex flex-col xl:flex-row lg:flex-row w-full max-w-[1200px] mx-auto gap-6 mt-10 px-4">
       {/* Sidebar */}
       <aside className="w-full flex justify-center h-[250px] lg:w-[280px] lg:shrink-0">
         <Sidebar

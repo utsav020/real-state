@@ -71,9 +71,9 @@ export default function DevelopersPage() {
   const developer = developers[infoIndex];
 
   return (
-    <div className="mt-10 mx-auto max-w-[1920px]">
+    <div className="mt-[73px] mx-auto max-w-[1920px]">
       <div
-        className="relative max-w-[1320px] 2xl:pl-[150px] rounded-xl shadow-xl p-6 md:p-10 lg:p-12 xl:p-16"
+        className="relative max-w-[1320px] h-[765px] 2xl:pl-[174px] rounded-r-xl shadow-xl p-6 md:p-10 lg:p-12 xl:p-16 2xl:p-0 2xl:pt-[30px]"
         style={{
           backgroundColor: "#3a3531", // ✅ dark solid base
           backgroundImage: "url('/images/bg design.png')", // ✅ overlay design

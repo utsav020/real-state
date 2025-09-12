@@ -101,24 +101,10 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            
-            {/* Indicator dots for mobile */}
-            <div className="flex justify-center mt-6 space-x-2 md:hidden">
-              {topProperties.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === activeIndex ? "bg-[#3E362E] scale-125" : "bg-gray-300"
-                  }`}
-                  aria-label={`Go to property ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
 
           {/* ✅ Tablet & Desktop → Expand/Resize Animation */}
-          <div className="hidden md:flex gap-4 lg:gap-5 xl:gap-6 2xl:gap-7 justify-center">
+          <div className="hidden md:flex gap-4 lg:gap-5 xl:gap-6 2xl:gap-5 justify-center">
             {topProperties.map((p, index) => (
               <div
                 key={p.id}

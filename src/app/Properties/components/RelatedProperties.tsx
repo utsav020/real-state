@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -70,11 +71,11 @@ export default function HomePage() {
   };
 
   return (
-    <main className="w-full max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8">
+    <main className="w-full max-w-[1520px] lg:mb-[50px] mx-auto px-4 sm:px-6 lg:px-0">
       {/* ✅ Top Projects Section */}
-      <section className="py-10 sm:py-14 lg:py-20">
-        <h2 className="text-3xl sm:text-4xl lg:text-[64px] text-[#3E362E] text-center font-bold mb-10 sm:mb-12">
-          Top Projects
+      <section className="py-10 sm:py-14 lg:py-0">
+        <h2 className="text-3xl sm:text-4xl lg:text-[22.28px] text-[#3E362E] text-left font-bold mb-10 sm:mb-12">
+          Similar Properties
         </h2>
 
         {/* ✅ Grid */}

@@ -146,7 +146,7 @@ export default function Card() {
               <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
                 {dev.name}
               </h2>
-              <p className="text-sm text-gray-600 mb-4 line-clamp-4 sm:line-clamp-5">
+              <p className="text-sm h-[100px] text-gray-600 mb-4 line-clamp-4 sm:line-clamp-5">
                 {dev.description}
               </p>
 
