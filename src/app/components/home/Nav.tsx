@@ -8,7 +8,7 @@ export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className='relative max-w-[1920px] w-full'>
+    <div className='relative max-w-screen w-full'>
       {/* ✅ Header with hamburger button */}
       <Header onMenuClick={() => setMenuOpen(true)} />
 

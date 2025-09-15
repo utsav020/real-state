@@ -11,7 +11,7 @@ interface MenuOverlayProps {
 export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
   return (
     <div
-      className={`fixed inset-0 z-50 bg-[url("/images/Menu-BG.png")] max-w-[1920px] bg-cover bg-center text-white transition-transform duration-500 ${
+      className={`fixed inset-0 z-50 bg-[url("/images/Menu-BG.png")] ease-in-out w-full bg-cover bg-center text-white transition duration-1500 ${
         isOpen ? "translate-y-0" : "-translate-y-full"
       }`}
     >
