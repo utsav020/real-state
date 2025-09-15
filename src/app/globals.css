@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @layer utilities {
   @keyframes slide {
     0% {
@@ -16,7 +15,6 @@
   }
 }
 
-
 /* ✅ Hide scrollbar cross-browser */
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
@@ -26,17 +24,28 @@
   display: none; /* Chrome, Safari, Opera */
 }
 
-        @keyframes slideUp {
-          0% {
-            transform: translateY(0);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(100%);
-            opacity: 1;
-          }
-        }
-        .animate-slideUp {
-          animation: slideUp 0.7s ease-out forwards;
-        }
-      
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+.animate-slideUp {
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+
+@keyframes callRing {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(62, 54, 46, 0.6); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(62, 54, 46, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(62, 54, 46, 0); }
+}
+
+.animate-callRing {
+  animation: callRing 1.5s infinite;
+}
+

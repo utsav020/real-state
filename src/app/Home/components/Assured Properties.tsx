@@ -82,8 +82,7 @@ export default function HomePage() {
             <div
               key={p.id}
               data-id={p.id}
-              className="property-card group relative h-[370px] md:h-[667px] bg-[#EAE7DD] shadow-md rounded-xl overflow-hidden w-full sm:w-auto transition-transform duration-500 hover:scale-105"
-            >
+              className="property-card group relative h-[370px] md:h-[667px] bg-[#EAE7DD] shadow-md rounded-xl overflow-hidden w-full sm:w-auto transition-transform duration-500 hover:scale-105">
               {/* Property Image */}
               <div
                 className="relative w-full h-[220px] sm:h-[250px] md:h-[500px] cursor-pointer"

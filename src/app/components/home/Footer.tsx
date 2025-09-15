@@ -103,7 +103,7 @@ export default function Footer(): JSX.Element {
               {infoBlocks.map((info, idx) => (
                 <div
                   key={idx}
-                  className="flex w-[300px] mx-auto items-center gap-3 py-2 justify-start sm:justify-start"
+                  className="flex sm:w-[300px] mx-auto items-center gap-3 py-2 justify-start sm:justify-start"
                 >
                   <div className="h-10 w-10 text-white rounded-full flex items-center justify-center bg-white/10">
                     {info.icon}

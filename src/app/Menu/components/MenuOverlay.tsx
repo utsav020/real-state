@@ -60,7 +60,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             </div>
 
             {/* Contact */}
-            <div className="pt-[50px]">
+            <div className="pt-[80px]">
               <h3 className="font-semibold text-[20px] text-[#AA8766]">
                 Contact
               </h3>
@@ -78,7 +78,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             </div>
 
             {/* Newsletter */}
-            <div className="mt-[80px]">
+            {/* <div className="mt-[0px]">
               <p className="font-bold text-2xl text-white">Newsletter</p>
               <div className="mt-4 flex flex-col sm:flex-row items-center sm:items-stretch">
                 <input
@@ -90,7 +90,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                   Subscribe
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

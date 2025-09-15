@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Phone } from "lucide-react";
 
 // ✅ Properties Data
 const topProperties = [
@@ -23,12 +23,12 @@ export default function HomePage() {
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
-    
+    window.addEventListener("resize", checkIsMobile);
+
     return () => {
-      window.removeEventListener('resize', checkIsMobile);
+      window.removeEventListener("resize", checkIsMobile);
     };
   }, []);
 
@@ -53,12 +53,12 @@ export default function HomePage() {
 
   return (
     <main className="w-full flex items-center mx-auto py-8">
-      <div className="max-w-[1920px] w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-40">
+      <div className="max-w-[1920px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-40">
         {/* ✅ Top Properties Section */}
-        <section className="w-full max-w-[1520px]">
+        <section className="w-full max-w-[1520px] mx-auto">
           {/* Heading + Arrows */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 md:mb-10 lg:mb-12 gap-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] w-full sm:text-left text-[#3E362E] font-bold">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] w-full sm:text-left 2xl:text-center text-[#3E362E] font-bold">
               Top Properties
             </h2>
             <div className="flex justify-center sm:justify-end gap-3 sm:gap-4">
@@ -79,7 +79,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* ✅ Mobile View → Slide Animation (unchanged as requested) */}
+          {/* ✅ Mobile View → Slide Animation */}
           <div className="md:hidden relative overflow-hidden w-full">
             <div
               className="flex transition-transform duration-700 ease-in-out"
@@ -87,7 +87,7 @@ export default function HomePage() {
                 transform: `translateX(-${activeIndex * 100}%)`,
               }}
             >
-              {topProperties.map((p) => (
+              {topProperties.map((p, index) => (
                 <div key={p.id} className="w-full flex-shrink-0 px-2">
                   <div className="relative w-full h-[320px] xs:h-[350px]">
                     <Image
@@ -97,19 +97,29 @@ export default function HomePage() {
                       className="object-cover rounded-2xl"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
+
+                    {/* ✅ Call Button on Mobile */}
+                    {activeIndex === index && (
+                      <a
+                        href="tel:+1234567890"
+                        className="absolute top-4 right-4 flex items-center justify-center w-12 h-12 rounded-full bg-[#3E362E] text-white shadow-lg animate-callRing"
+                      >
+                        <Phone className="w-6 h-6" />
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ✅ Tablet & Desktop → Expand/Resize Animation */}
+          {/* ✅ Tablet & Desktop → Expand + Scale + Call Button */}
           <div className="hidden md:flex gap-4 lg:gap-5 xl:gap-6 2xl:gap-5 justify-center">
             {topProperties.map((p, index) => (
               <div
                 key={p.id}
                 onClick={() => setActiveIndex(index)}
-                className={`cursor-pointer rounded-2xl overflow-hidden relative transition-all duration-700 ease-in-out flex-shrink-0
+                className={`cursor-pointer rounded-2xl overflow-hidden relative flex-shrink-0 transition-all duration-700 ease-in-out
                   ${
                     activeIndex === index
                       ? "w-[30%] md:w-[35%] lg:w-[40%] xl:w-[35%] 2xl:w-[410px]"
@@ -121,11 +131,24 @@ export default function HomePage() {
                     src={p.image}
                     alt={`Property ${index + 1}`}
                     fill
-                    className={`object-cover rounded-2xl transition-transform duration-700 ease-in-out ${
-                      activeIndex === index ? "scale-105" : "scale-95 opacity-80"
-                    }`}
+                    className={`object-cover rounded-2xl transition-all duration-700 ease-in-out
+                      ${
+                        activeIndex === index
+                          ? "scale-105 opacity-100"
+                          : "scale-95 opacity-80"
+                      }`}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
+
+                  {/* ✅ Call Button (Ringing effect) */}
+                  {activeIndex === index && (
+                    <a
+                      href="tel:+1234567890"
+                      className="absolute top-5 right-5 flex items-center justify-center w-14 h-14 rounded-full bg-[#3E362E] text-white shadow-lg animate-callRing"
+                    >
+                      <Phone className="w-6 h-6" />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

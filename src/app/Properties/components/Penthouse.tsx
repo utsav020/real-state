@@ -94,7 +94,7 @@ export default function PropertyPage() {
               closet.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-8">
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">
                   Property Features
