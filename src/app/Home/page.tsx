@@ -9,7 +9,7 @@ import TopBuilders from "./components/TopBuilders";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
       <Hero />
       <AssuredProperties />
       <TopProperties />

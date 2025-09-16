@@ -49,11 +49,11 @@ export default function Hero() {
               </select>
             </div>
 
-            {/* ✅ Budget Input */}
+            {/* ✅ Search Input */}
             <div className="flex-1 md:flex bg-white border border-white/60 px-4 py-2 rounded-md md:rounded-lg md:w-[150px] lg:w-[180px]">
               <input
                 type="text"
-                placeholder="Budget"
+                placeholder="Search"
                 className="h-[50px] w-full focus:outline-none text-sm sm:text-base xl:w-[150px] placeholder-gray-500"
               />
             </div>
@@ -67,7 +67,7 @@ export default function Hero() {
             </div>
 
             {/* ✅ Dropdown: Advanced Search */}
-            <div className="flex px-4 py-2 rounded-md md:rounded-lg md:w-[180px] lg:w-[220px] border-2 xl:w-[180px]">
+            <div className="flex px-4 py-2 rounded-md md:rounded-lg md:w-[180px] lg:w-[220px] xl:w-[180px]">
               <select
                 className="h-[50px] w-full focus:outline-none text-sm sm:text-base text-[#000000]"
                 defaultValue="advanced"
@@ -85,3 +85,4 @@ export default function Hero() {
     </section>
   );
 }
+  

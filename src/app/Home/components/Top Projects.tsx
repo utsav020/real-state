@@ -83,7 +83,7 @@ export default function HomePage() {
             <div
               key={p.id}
               data-id={p.id}
-              className="property-card group relative h-[370px] md:h-[442px] shadow-md rounded-xl overflow-hidden w-full transition-transform duration-500 hover:scale-105"
+              className="property-card group relative h-[370px] sm:h-[412px] md:h-[442px] shadow-md rounded-xl overflow-hidden w-full transition-transform duration-500 hover:scale-105"
             >
               {/* Property Image */}
               <div

@@ -56,27 +56,11 @@ export default function HomePage() {
       <div className="max-w-[1920px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-40">
         {/* ✅ Top Properties Section */}
         <section className="w-full max-w-[1520px] mx-auto">
-          {/* Heading + Arrows */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 md:mb-10 lg:mb-12 gap-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] w-full sm:text-left 2xl:text-center text-[#3E362E] font-bold">
+          {/* Heading */}
+          <div className="mb-8 md:mb-10 lg:mb-12 gap-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] w-full text-center text-[#3E362E] font-bold">
               Top Properties
             </h2>
-            <div className="flex justify-center sm:justify-end gap-3 sm:gap-4">
-              <button
-                onClick={handlePrev}
-                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100 transition"
-                aria-label="Previous property"
-              >
-                <ChevronLeft className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100 transition"
-                aria-label="Next property"
-              >
-                <ChevronRight className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              </button>
-            </div>
           </div>
 
           {/* ✅ Mobile View → Slide Animation */}
@@ -152,6 +136,23 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center sm:justify-center gap-3 mt-[70px] sm:gap-4">
+            <button
+              onClick={handlePrev}
+              className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100 transition"
+              aria-label="Previous property"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100 transition"
+              aria-label="Next property"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            </button>
           </div>
         </section>
       </div>

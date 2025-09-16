@@ -14,15 +14,6 @@ export default function HomePage() {
 
       {/* ✅ Full-page sliding menu overlay */}
       <MenuOverlay isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-
-      {/* ✅ Main content */}
-      {/* <main className="p-6">
-        <h2 className="text-2xl font-bold">Welcome to Real Estate</h2>
-        <p className="mt-4 text-gray-600">
-          This is your homepage content. Click the menu icon to open the
-          full-screen overlay menu.
-        </p>
-      </main> */}
     </div>
   );
 }
